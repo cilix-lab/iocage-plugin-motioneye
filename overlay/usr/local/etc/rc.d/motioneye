@@ -1,0 +1,55 @@
+#!/bin/sh
+#
+# PROVIDE: motioneye
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following line in /etc/rc.conf to enable motioneye at startup
+#
+# motioneye_enable="YES"
+
+. /etc/rc.subr
+name=motioneye
+rcvar=${name}_enable
+
+pidfile_child="/var/run/${name}.pid"
+pidfile="/var/run/${name}_daemon.pid"
+
+load_rc_config ${name}
+: ${motioneye_enable:="NO"}
+: ${motioneye_user:="motioneye"}
+: ${motioneye_group:="motioneye"}
+: ${motioneye_config_dir:="/usr/local/etc/motioneye"}
+: ${motioneye_log_dir:="/var/log/motioneye"}
+
+command="/usr/sbin/daemon"
+start_precmd=${name}_precmd
+motioneye_precmd()
+{
+    rc_flags="-S -P ${pidfile} -p ${pidfile_child} /usr/local/bin/meyectl startserver -c ${motioneye_config_dir}/motioneye.conf ${rc_flags}"
+
+    if [ ! -e "${pidfile_child}" ]; then
+            install -g ${motioneye_group} -o ${motioneye_user} -- /dev/null "${pidfile_child}";
+    fi
+
+    if [ ! -e "${pidfile}" ]; then
+            install -g ${motioneye_group} -o ${motioneye_user} -- /dev/null "${pidfile}";
+    fi
+
+    if [ ! -d "${motioneye_config_dir}" ]; then
+            install -d -g ${motioneye_group} -o ${motioneye_user} -- "${motioneye_config_dir}";
+    fi
+
+    if [ ! -d "${motioneye_log_dir}" ]; then
+            install -d -g ${motioneye_group} -o ${motioneye_user} -- "${motioneye_log_dir}";
+    fi
+}
+
+stop_postcmd=${name}_postcmd
+motioneye_postcmd()
+{
+    rm -f -- "${pidfile}"
+    rm -f -- "${pidfile_child}"
+}
+
+run_rc_command "$1"
