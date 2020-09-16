@@ -1,4 +1,7 @@
 {
-  "adminportal": "http://%%IP%%:8765",
+  "adminportal": "http://%%IP%%:%%P%%",
+  "adminportal_placeholders": {
+  	"%%P%%": "port"
+  },
   "docurl": "https://github.com/ccrisan/motioneye/wiki"
 }
