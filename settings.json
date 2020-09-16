@@ -1,3 +1,15 @@
 {
-    "servicerestart":"service motioneye restart",
+  "servicerestart":"service motioneye restart",
+  "serviceget": "/usr/local/bin/pluginget",
+  "serviceset": "/usr/local/bin/pluginset",
+  "options": {
+      "port": {
+          "type": "int",
+          "name": "HTTP Port",
+          "description": "Port for listening http requests.",
+          "range": "1-65535",
+          "default": "8765",
+          "requirerestart": true
+      }
+    }
 }

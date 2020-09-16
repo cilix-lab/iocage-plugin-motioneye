@@ -1,0 +1,13 @@
+#!/bin/sh
+
+case $1 in
+  port )
+    sed -i '' 's|^port .*|port '"$2"'|' /usr/local/etc/motioneye/motioneye.conf
+    ;;
+  * )
+    echo "Invalid option.">&2
+    exit 1
+    ;;
+esac
+
+exit 0

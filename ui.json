@@ -1,4 +1,4 @@
 {
-    "adminportal": "http://%%IP%%:8765",
-    "docurl": "https://github.com/ccrisan/motioneye/wiki"
+  "adminportal": "http://%%IP%%:8765",
+  "docurl": "https://github.com/ccrisan/motioneye/wiki"
 }

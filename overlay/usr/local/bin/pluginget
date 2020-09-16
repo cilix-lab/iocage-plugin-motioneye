@@ -1,0 +1,13 @@
+#!/bin/sh
+
+case $1 in
+  port )
+    cat /usr/local/etc/motioneye/motioneye.conf | grep '^port' | cut -d ' ' -f2
+    ;;
+  * )
+    echo "Invalid option.">&2
+    exit 1
+    ;;
+esac
+
+exit 0
