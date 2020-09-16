@@ -1,7 +1,4 @@
 {
-  "adminportal": "http://%%IP%%:%%P%%",
-  "adminportal_placeholders": {
-  	"%%P%%": "port"
-  },
+  "adminportal": "http://%%IP%%:8765",
   "docurl": "https://github.com/cilix-lab/iocage-plugin-index"
 }
