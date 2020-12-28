@@ -6,6 +6,9 @@ ln -s /usr/local/bin/python2.7 /usr/local/bin/python
 ln -s /usr/local/bin/pip-2.7 /usr/local/bin/pip2
 ln -s /usr/local/bin/pip-2.7 /usr/local/bin/pip
 
+# Create symlink for sha1sum to allow file uploading to function
+ln -s /usr/local/bin/shasum /usr/local/bin/sha1sum
+
 # Install motioneye
 pip-2.7 install motioneye
 
