@@ -1,8 +1,14 @@
 #!/bin/sh
 
-# Create symlinks for python and pip
+# Create symlinks for python
 ln -s /usr/local/bin/python2.7 /usr/local/bin/python2
 ln -s /usr/local/bin/python2.7 /usr/local/bin/python
+
+# Install legacy py27-pip
+fetch https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py
+python get-pip.py
+
+# Create symlinks for pip
 ln -s /usr/local/bin/pip-2.7 /usr/local/bin/pip2
 ln -s /usr/local/bin/pip-2.7 /usr/local/bin/pip
 
