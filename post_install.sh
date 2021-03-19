@@ -1,10 +1,15 @@
 #!/bin/sh
 
-# Create symlinks for python and pip
+# Create symlinks for python
 ln -s /usr/local/bin/python2.7 /usr/local/bin/python2
 ln -s /usr/local/bin/python2.7 /usr/local/bin/python
-ln -s /usr/local/bin/pip-2.7 /usr/local/bin/pip2
-ln -s /usr/local/bin/pip-2.7 /usr/local/bin/pip
+
+# Install legacy py27-pip
+fetch https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py
+python get-pip.py
+
+# Create symlinks for pip
+ln -s /usr/local/bin/pip2.7 /usr/local/bin/pip-2.7
 
 # Create symlink for sha1sum to allow file uploading to function
 ln -s /usr/local/bin/shasum /usr/local/bin/sha1sum
