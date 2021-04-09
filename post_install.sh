@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# Install Python27
-env ASSUME_ALWAYS_YES=YES pkg install python2-2_3
+# Install Python 2.7 and Mosquitto (for mosquitto_pub)
+env ASSUME_ALWAYS_YES=YES pkg install python2 mosquitto
 
 # Create symlinks for python
 ln -s /usr/local/bin/python2.7 /usr/local/bin/python2
