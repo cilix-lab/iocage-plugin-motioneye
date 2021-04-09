@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Install Python27
+env ASSUME_ALWAYS_YES=YES pkg install python2-2_3
+
 # Create symlinks for python
 ln -s /usr/local/bin/python2.7 /usr/local/bin/python2
 ln -s /usr/local/bin/python2.7 /usr/local/bin/python
