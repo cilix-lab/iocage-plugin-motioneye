@@ -20,14 +20,4 @@ iocage set -P port=8765 motioneye
 
 ## UI
 
-Due to issues with FreeNAS, `adminportal` will default to `8765`. When this is solved, you will be able to replace `ui.json` with the following:
-
-```
-{
-  "adminportal": "http://%%IP%%:%%P%%",
-  "adminportal_placeholders": {
-  	"%%P%%": "port"
-  },
-  "docurl": "https://github.com/cilix-lab/iocage-plugin-index"
-}
-```
+Testing to either use or remove this setting if custom port
