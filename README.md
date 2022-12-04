@@ -18,6 +18,3 @@ Assuming your plugin jail is called "motioneye" you can set it by calling someth
 iocage set -P port=8765 motioneye
 ```
 
-## UI
-
-Testing to either use or remove this setting if custom port
