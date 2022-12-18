@@ -8,7 +8,7 @@ Official documentation for MotionEye can be found [here](https://github.com/moti
 
 Most settings can be set from the web GUI as describen in [MotionEye's](https://github.com/motioneye-project/motioneye/tree/dev) offical repository.
 
-The initial log-in until modified is user: 'admin' and password is blank.
+The initial log-in until modified is user: 'admin' and password is blank. Fix this before exposing the jail outside your LAN. 
 
 ## Settings
 
